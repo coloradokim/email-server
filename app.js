@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-var email_phone = require('./routes/email_phone');
+var first_contact_info = require('./routes/first_contact_info');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/v1/api/email_phone', email_phone);
+app.use('/v1/api/first_contact_info', first_contact_info);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

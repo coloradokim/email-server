@@ -1,5 +1,5 @@
 exports.up = (knex, Promise) => {
-  return knex.schema.createTable('email_phone', (table) => {
+  return knex.schema.createTable('first_contact_info', (table) => {
     table.increments();
     table.string('email').unique().notNullable();
     table.varchar('phone')
@@ -7,6 +7,7 @@ exports.up = (knex, Promise) => {
   });
 };
 
+
 exports.down = (knex, Promise) => {
-  return knex.schema.dropTable('email_phone');
+  return knex.schema.dropTable('first_contact_info');
 };

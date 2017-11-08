@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 const server = require('../app');
 const knex = require('../db/knex');
 
-describe('routes : email_phone', () => {
+describe('routes : first_contact_info', () => {
 
   beforeEach((done) => {
     knex.migrate.rollback()
@@ -32,10 +32,10 @@ describe('routes : email_phone', () => {
 
 });
 
-describe('POST /api/v1/email_phone', () => {
+describe('POST /api/v1/first_contact_info', () => {
   it('should respond with a success message along with a single entry that was added', (done) => {
     chai.request(server)
-    .post('/api/v1/email_phone')
+    .post('/api/v1/first_contact_info')
     .send({
       email: 'kim@hirediversity.us',
       phone: 1234567890

@@ -5,7 +5,7 @@ var dbConnection = require('../db/knex');
 router.post('/', (req, res, next) => {
   const newEmail = req.body.email;
   const newPhone = req.body.phone;
-  dbConnection('email_phone')
+  dbConnection('first_contact_info')
     .insert({
       email: newEmail,
       phone: newPhone
